@@ -1,0 +1,18 @@
+<div class ="login1 pointer" >
+  <h1 style = "color: red ">Login Completed</h1>
+
+</div>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>TITLE</strong>
+  <%= @posts.title %>
+</p>
+
+<p>
+  <strong>CONTENT</strong>
+  <%= @posts.content %>
+</p>
+
+ <%= link_to 'Edit', edit_post_path(@posts) %> |
+ <%= link_to 'Back', posts_path %>

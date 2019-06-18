@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Users</h1>
-
+<%= will_paginate %>
 <table>
   <thead>
     <tr>
@@ -17,13 +17,15 @@
         <td><%= user.name %></td>
         <td><%= user.email %></td>
         <td><%= link_to 'Show', user %></td>
+        <% if user == current_user %>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <% end %>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+<%= will_paginate %>
 <br>
 
 <%= link_to 'New User', new_user_path %>
