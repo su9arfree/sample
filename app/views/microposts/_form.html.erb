@@ -1,0 +1,5 @@
+<%= form_for (current_user.microposts.build) do |f| %>
+	<%= f.text_field :content, class: "col-md-12", style:"margin-bottom :10px; height :200px" %>
+	<%= f.submit "post", class: "btn btn-primary" %>
+
+	<% end %>

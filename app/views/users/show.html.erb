@@ -15,5 +15,17 @@
   <%= @user.email %>
 </p>
 
+<p>
+  <strong>Following</strong>
+  <%= @user.following.count %>
+</p>
+
+<p>
+  <strong>Follower</strong>
+  <%= @user.followers.count %>
+</p>
+
+<%= render 'follow_form' if logged_in? %>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

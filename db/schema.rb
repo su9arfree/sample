@@ -10,11 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_20_120659) do
+ActiveRecord::Schema.define(version: 2019_07_02_113820) do
+
+  create_table "microposts", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "content"
+    t.datetime "timestamps"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.string "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer "follower_id"
+    t.integer "followed_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -29,6 +44,8 @@ ActiveRecord::Schema.define(version: 2019_06_20_120659) do
     t.string "activation_digest"
     t.datetime "activated_at"
     t.boolean "activated", default: false
+    t.string "reset_digest"
+    t.datetime "reset_sent_at"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
